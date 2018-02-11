@@ -17,8 +17,9 @@ module Todo
 
       set_title 'GTK+ Simple ToDo'
 
-      add_new_item_button.signal_connect 'clicked' do |button, application|
-        puts "clicked!!"
+      add_new_item_button.signal_connect 'clicked' do |button|
+        new_item_window = NewItemWindow.new(application, Todo::Item.new(user_data_path: application.user_data_path))
+        new_item_window.present
       end
     end
   end
