@@ -47,7 +47,7 @@ module Todo
     end
 
     def to_json
-      results = {}
+      result = {}
       PROPERTIES.each do |prop|
         result[prop] = self.send prop
       end
